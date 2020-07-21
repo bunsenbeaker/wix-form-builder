@@ -1,0 +1,4 @@
+<div *ngIf="form">
+    <h2>{{form.name}}</h2>
+    <app-dynamic-input *ngFor="let field of form.elements" [type]="field.type" [label]="field.label"></app-dynamic-input>
+</div>

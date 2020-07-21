@@ -1,0 +1,24 @@
+<form [formGroup]="newFieldGroup">
+    <mat-form-field appearance="fill">
+        <mat-label>Field Name</mat-label>
+        <input matInput id="name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill"> 
+        <mat-label>Field Type</mat-label>
+        <mat-select formControlName="type">
+        <mat-option value="text">Text</mat-option>
+        <mat-option value="color">Color</mat-option>
+        <mat-option value="date">Date</mat-option>
+        <mat-option value="email">Email</mat-option>
+        <mat-option value="tel">Tel</mat-option>
+        <mat-option value="number">Number</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Field Label</mat-label>
+        <input matInput id="label" formControlName="label">
+    </mat-form-field>
+    <button mat-stroked-button color="primary" (click)="addFieldClicked()">Add</button>
+</form>
+
+

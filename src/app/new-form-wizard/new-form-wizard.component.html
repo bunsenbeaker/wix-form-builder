@@ -1,0 +1,34 @@
+<mat-horizontal-stepper #stepper [linear]= 'false' id="stepper">
+    <mat-step [stepControl]="newFormNameGroup">
+      <form [formGroup]="newFormNameGroup">
+        <ng-template matStepLabel>Enter Form Name</ng-template>
+        <mat-form-field>
+          <mat-label>Form Name</mat-label>
+          <input matInput placeholder="Meaningful yet cool name for your form" formControlName="formName" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>  
+    
+    <mat-step >
+        <form>
+          <ng-template matStepLabel>Add Form Fields</ng-template>
+              <app-add-form-field (addField) = "addField($event)"></app-add-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>Cool. Now hit the SUBMIT button to create this form.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="submitNewForm()">Submit</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
