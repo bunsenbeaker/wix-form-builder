@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import {FormGroup, Validators} from '@angular/forms';
-import { Form, FormElement } from '../core/models/form.model';
+import { Form, FormField } from '../core/models/form.model';
 import { FormBuilder } from '@angular/forms';
 import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -13,12 +13,13 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class NewFormWizardComponent implements OnInit, OnDestroy {
 
-  @Output() newFormChanged = new EventEmitter<Partial<Form>>();
+  @Output() newFormChanged = new EventEmitter<Form>();
   @Output() newFormWizardCompleted = new EventEmitter();
+  @Output() addForm = new EventEmitter();
 
   newFormNameGroup: FormGroup;
 
-  private newForm: Partial<Form> = {};
+  private newForm: Form = {};
 
   private unsubscriber = new Subject();
 
@@ -41,18 +42,20 @@ export class NewFormWizardComponent implements OnInit, OnDestroy {
     this.newFormChanged.emit(this.newForm);
   }
 
-  addField(newField: FormElement) {
+  addField(newField: FormField) {
 
-    if (!this.newForm.elements) {
-      this.newForm.elements = [];
+    if (!this.newForm.fields) {
+      this.newForm.fields = [];
     }
-    this.newForm.elements = [...this.newForm.elements, newField];
+    this.newForm.fields = [...this.newForm.fields, newField];
     this.newFormUpdated();
 
   }
 
-  
+
   submitNewForm(): void{
+
+    this.addForm.emit();
 
   }
 

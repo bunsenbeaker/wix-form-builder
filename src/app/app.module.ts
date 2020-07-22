@@ -23,6 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule} from '@angular/material/button';
 import { AddFormFieldComponent } from './add-form-field/add-form-field.component';
 import { FormViewComponent } from './form-view/form-view.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { MatIconModule } from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -31,15 +34,18 @@ import { FormViewComponent } from './form-view/form-view.component';
     DynamicInputComponent,
     NewFormWizardComponent,
     AddFormFieldComponent,
-    FormViewComponent
+    FormViewComponent,
+    FormBuilderComponent
   ],
   imports: [
     BrowserModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatDividerModule,
     MatStepperModule,
     MatButtonModule,
+    MatIconModule,
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({

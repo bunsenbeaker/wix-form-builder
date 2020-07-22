@@ -1,15 +1,15 @@
 export interface Form {
 
-    _id: string;
-    name: string;
-    created: Date;
-    submissionsCount: number;
-    elements: Array<FormElement>;
+    _id?: string;
+    name?: string;
+    created?: Date;
+    submissionsCount?: number;
+    fields?: Array<FormField>;
 }
 
 
-export interface FormElement{
-    type: 'text' |'color' | 'date' | 'email' | 'tel' | 'number';
+export interface FormField{
+    input_type: 'text' |'color' | 'date' | 'email' | 'tel' | 'number';
     name: string;
     label: string;
 }

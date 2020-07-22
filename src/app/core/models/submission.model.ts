@@ -1,7 +1,6 @@
 export interface Submission {
-    submission_id: string;
+    submission_id?: string;
+    form_id: string;
     submitted: Date;
-    data: [{
-        [key: string]: string;
-    }];
+    data: {[key: string]: string};
 }

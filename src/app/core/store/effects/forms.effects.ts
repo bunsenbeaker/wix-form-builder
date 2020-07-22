@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EMPTY } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { FormsService  } from '../../services/forms.service';
+import * as FormsActions from '../actions/forms.actions';
 
 @Injectable()
 export class FormsEffects {
@@ -17,6 +18,15 @@ export class FormsEffects {
     )
   );
  
+
+  addForm$= createEffect(()=> this.actions$.pipe(
+    ofType(FormsActions.CreateNewForm),
+    mergeMap(action => this.formsService.addForm(action.newForm)
+    .pipe(map((newFormResponse: {data}) => FormsActions.CreateNewFormSuccess({ newForm: newFormResponse.data})),
+    catchError(() => EMPTY)))
+  ));
+
+
   constructor(
     private actions$: Actions,
     private formsService: FormsService

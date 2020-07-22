@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { FormElement } from '../core/models/form.model';
+import { FormField } from '../core/models/form.model';
 import { FormGroup, FormBuilder , Validators} from '@angular/forms';
 import { Subject } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 })
 export class AddFormFieldComponent implements OnInit {
 
-  @Output() addField = new EventEmitter<FormElement>();
+  @Output() addField = new EventEmitter<FormField>();
   
   newFieldGroup: FormGroup;
 
@@ -19,7 +19,7 @@ export class AddFormFieldComponent implements OnInit {
 
     this.newFieldGroup = this.formBuilder.group({
       name: ['', Validators.required],
-      type: ['', Validators.required],
+      input_type: ['', Validators.required],
       label: ['', Validators.required]
     });
   }
@@ -27,13 +27,12 @@ export class AddFormFieldComponent implements OnInit {
 
   addFieldClicked(): void {
 
-    const {name, type, label} = this.newFieldGroup.value;
+    const {name, input_type, label} = this.newFieldGroup.value;
 
-    this.addField.emit({name, type, label});
+    this.addField.emit({name, input_type, label});
 
     this.newFieldGroup.reset();
-    this.newFieldGroup.markAsPristine();
-    this.newFieldGroup.markAsUntouched();
+
   }
-  
+
 }

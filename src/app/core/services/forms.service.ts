@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Form } from '../models/form.model';
 
 
 @Injectable({
@@ -11,7 +12,19 @@ export class FormsService {
   constructor(private httpClient: HttpClient) { }
 
   public loadAllForms(){
-    console.log('going to get some forms');
+
     return this.httpClient.get('http://localhost:4200/api/forms');
+  }
+
+
+  public addForm(newForm: Form) {
+    
+    let body: HttpParams = new HttpParams();
+    
+    body = body.set('newForm', JSON.stringify(newForm));
+        
+    
+    return this.httpClient.post('http://localhost:4200/api/forms', body);
+
   }
 }

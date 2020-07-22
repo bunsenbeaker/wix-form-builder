@@ -1,4 +1,7 @@
-<mat-form-field appearance="fill">
-    <mat-label>{{label}}</mat-label>
-    <input matInput type='{{type}}'/>
-</mat-form-field>
+<form [formGroup]="dynputGroup">
+    <mat-form-field appearance="fill">
+        <mat-label>{{field.label}}</mat-label>
+        <input matInput type='{{field.input_type}}' formControlName="input"/>
+    </mat-form-field>
+</form>
+

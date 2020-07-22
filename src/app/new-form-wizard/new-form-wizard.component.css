@@ -1,3 +1,23 @@
+.stepcontent{
+    height: 200px;
+    position: relative;
+    padding: 40px;
+}
+
+.stepperbuttons{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.mat-stroked-button, .mat-raised-button{
+    margin-left: 20px;
+}
+
 #stepper {
-    width: 960px;
+    background-color: #333;
+}
+
+#formname{
+    margin: 0 auto;
 }

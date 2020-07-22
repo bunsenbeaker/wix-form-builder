@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from './core/models/form.model';
+import { Submission } from './core/models/submission.model';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,6 @@ import { Form } from './core/models/form.model';
 })
 export class AppComponent implements OnInit{
   title = 'wix-form-builder';
-  form: Partial<Form>;
   /**
    *
    */
@@ -19,8 +19,5 @@ export class AppComponent implements OnInit{
 
   }
 
-  formUpdated(form: Partial<Form>): void{
-
-      this.form = form;
-  }
+  
 }

@@ -15,7 +15,7 @@ export const initialState: FormsState = {
 
 const formsReducer = createReducer(
     initialState,
-    on( FormsActions.CreateNewForm , (state, {newForm}) => ({...state, formslist: [...state.formslist, newForm]})),
+    on( FormsActions.CreateNewFormSuccess, (state, {newForm}) => ({...state, formslist: [...state.formslist, newForm]})),
     on(FormsActions.LoadAllSuccess, (state, {payload}) => ({...state, formslist: payload}))
   );
 
