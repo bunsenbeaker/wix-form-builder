@@ -1,6 +1,5 @@
 .stepcontent{
-    height: 200px;
-    position: relative;
+
     padding: 40px;
 }
 
@@ -16,6 +15,11 @@
 
 #stepper {
     background-color: #333;
+    width: 550px;
+    height: 600px;
+    float:left;
+    position: relative;
+    border: 1px solid #595959;
 }
 
 #formname{
