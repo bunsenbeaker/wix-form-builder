@@ -10,6 +10,6 @@ export const LoadAllSuccess = createAction('[Forms] Load All Success',
   props<{payload: Array<Form>}>()
 );
 
-export const CreateNewFormSuccess = createAction('[Forms] New Form Created',
+export const CreateNewFormSuccess = createAction('[Forms] Add New Success',
   props<{ newForm: Form }>());
 

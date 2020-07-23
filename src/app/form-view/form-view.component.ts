@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Submission, SubmittedField } from '../core/models/submission.model';
 import { Form } from '../core/models/form.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class FormViewComponent implements OnInit {
   filledValues: Array<SubmittedField> = [];
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     
@@ -38,5 +39,6 @@ export class FormViewComponent implements OnInit {
       submitted: new Date(),
       data: this.filledValues
     });
+
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Form } from '../core/models/form.model';
 import { Store } from '@ngrx/store';
 import { CreateNewForm } from '../core/store/actions/forms.actions';
-
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-form-builder',
   templateUrl: './form-builder.component.html',
@@ -12,7 +12,7 @@ export class FormBuilderComponent implements OnInit {
 
   newForm: Form;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +27,9 @@ export class FormBuilderComponent implements OnInit {
     this.store.dispatch(CreateNewForm({
       newForm: this.newForm
     }));
+
+    this.router.navigate(['/forms']);
+
   }
 
 }

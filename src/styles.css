@@ -7,3 +7,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 body.mat-typography{
     background-color:#333;
 }
+
+
+
+h2 {
+    color: #7B1FA2;
+    letter-spacing: 0.5em;
+  }

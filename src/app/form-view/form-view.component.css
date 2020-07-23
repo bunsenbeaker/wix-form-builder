@@ -45,3 +45,7 @@
   .ribbon:after {
     left:100%;
   }
+
+  h2 {
+    border-bottom: 1px solid #FFF;
+  }
