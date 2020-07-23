@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Submission } from '../core/models/submission.model';
+import { Submission, SubmittedField } from '../core/models/submission.model';
 import { Form } from '../core/models/form.model';
+
 
 @Component({
   selector: 'app-form-view',
@@ -10,18 +11,22 @@ import { Form } from '../core/models/form.model';
 export class FormViewComponent implements OnInit {
 
   @Input() form: Form;
+  @Input() mode: 'preview'|'active';
+
 
   @Output() formSubmitted = new EventEmitter<Submission>();
-  filledValues: {[key: string]: string} = {};
+  filledValues: Array<SubmittedField> = [];
+
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   fieldUpdated(field: {key: string, value: string} ): void {
 
-    this.filledValues[field.key] = field.value;
+    this.filledValues.push({field: field.key, value: field.value});
 
   }
 

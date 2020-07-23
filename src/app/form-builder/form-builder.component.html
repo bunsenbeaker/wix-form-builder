@@ -1,4 +1,4 @@
-<div id="builder">
+<div id="builder" >
     <app-new-form-wizard (newFormChanged)="formUpdated($event)" (addForm)="addForm()" ></app-new-form-wizard>
-    <app-form-view [form]="newForm"></app-form-view>
+    <app-form-view [form]="newForm" mode="preview"></app-form-view>
 </div>

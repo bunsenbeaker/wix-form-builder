@@ -3,24 +3,17 @@ import {Action, createReducer, on, State} from '@ngrx/store';
 import * as  SubmissionActions from '../actions/submissions.actions';
 
 
-export interface SubmissionsState {
-
-    submissions: Array<Submission>;
-}
-
-export const initialState: SubmissionsState = {
-    submissions: []
-};
+export const initialState: Array<Submission> = [];
 
 const submissionsReducer = createReducer(
     initialState,
-    on( SubmissionActions.LoadSubmissionsAction , state => ({...state})
+    on( SubmissionActions.LoadAllSuccess , (state, {payload}) => ([...payload])
   ));
 
 
 
 
-export function reducer(state: SubmissionsState | undefined, action: Action): unknown {
+export function reducer(state: Array<Submission> | undefined, action: Action): unknown {
     return submissionsReducer(state, action);
 }
 

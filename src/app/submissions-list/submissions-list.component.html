@@ -1,0 +1,14 @@
+<h1 *ngIf="(submissions$ | async)">Submissions List for '{{(submissions$ | async).form}}'</h1>
+
+<table mat-table *ngIf="submissions$ | async as tablesource" [dataSource]="tablesource.data" class="mat-elevation-z8">    
+
+    <ng-container *ngFor="let field of tablesource.fields; let colIndex = index" matColumnDef="{{field}}">
+      <th mat-header-cell *matHeaderCellDef>{{field}}</th>
+      <td mat-cell *matCellDef="let element">{{element[field]}}</td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="tablesource.fields"></tr>
+    <tr mat-row *matRowDef="let row; columns: tablesource.fields"></tr>
+  </table>
+

@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+  }
+
+  .mat-header-cell{
+    color: #9ccc65;
+
+  }
+  
+  #addform {
+    position: absolute;
+    right:30px;
+    top:60px;
+  }

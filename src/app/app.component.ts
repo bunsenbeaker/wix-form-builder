@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from './core/models/form.model';
 import { Submission } from './core/models/submission.model';
+import { Store } from '@ngrx/store';
+import * as FormsActions from './core/store/actions/forms.actions';
+import * as SubmissionsActions from './core/store/actions/submissions.actions';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +15,12 @@ export class AppComponent implements OnInit{
   /**
    *
    */
-  constructor() {
+  constructor(private store: Store) {
     
   }
   ngOnInit(): void{
-
+    this.store.dispatch(FormsActions.LoadAll());
+    this.store.dispatch(SubmissionsActions.LoadAll());
   }
 
   

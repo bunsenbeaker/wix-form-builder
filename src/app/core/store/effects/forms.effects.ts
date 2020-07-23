@@ -9,7 +9,7 @@ import * as FormsActions from '../actions/forms.actions';
 export class FormsEffects {
  
   loadAllForms$ = createEffect(() => this.actions$.pipe(
-    ofType('[Forms] Load All'),
+    ofType(FormsActions.LoadAll),
     mergeMap(() => this.formsService.loadAllForms()
       .pipe(
         map((formsResponse: {data}) => ({ type: '[Forms] Load All Success', payload: formsResponse.data })),

@@ -2,7 +2,7 @@
   <mat-horizontal-stepper #stepper [linear]= 'false' id="stepper">
     <mat-step  [stepControl]="newFormNameGroup">
       <form [formGroup]="newFormNameGroup" class="stepcontent">
-        <ng-template matStepLabel>Enter Form Name</ng-template>
+        <ng-template matStepLabel>Form Name</ng-template>
         <p>
           Please enter a name for your new form
         </p>
@@ -18,7 +18,7 @@
     
     <mat-step >
         <form class="stepcontent">
-          <ng-template matStepLabel>Add Form Fields</ng-template>
+          <ng-template matStepLabel>Add Fields</ng-template>
               <app-add-form-field (addField) = "addField($event)"></app-add-form-field>
           <div class="stepperbuttons">
             <button mat-stroked-button matStepperPrevious>Back</button>
@@ -29,7 +29,7 @@
 
     <mat-step>
       <div class="stepcontent">
-        <ng-template matStepLabel>Submit Your Form</ng-template>
+        <ng-template matStepLabel>Submit Form</ng-template>
         <p>Cool. Now hit the SUBMIT button to create this form.</p>
         <div class="stepperbuttons">
           <button mat-stroked-button matStepperPrevious>Back</button>

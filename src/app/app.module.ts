@@ -25,7 +25,12 @@ import { AddFormFieldComponent } from './add-form-field/add-form-field.component
 import { FormViewComponent } from './form-view/form-view.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { MatIconModule } from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
+import { FormsListComponent } from './forms-list/forms-list.component';
+import { MatTableModule} from '@angular/material/table';
+import { FriendlyDatePipe } from './shared/pipes/friendly-date.pipe';
+import { SubmissionsEffects } from './core/store/effects/submissions.effects';
+import { SubmissionsListComponent } from './submissions-list/submissions-list.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -35,16 +40,20 @@ import {MatDividerModule} from '@angular/material/divider';
     NewFormWizardComponent,
     AddFormFieldComponent,
     FormViewComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    FormsListComponent,
+    FriendlyDatePipe,
+    SubmissionsListComponent
   ],
   imports: [
     BrowserModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatDividerModule,
     MatStepperModule,
+    MatTableModule,
     MatButtonModule,
+    MatTooltipModule,
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
@@ -53,7 +62,7 @@ import {MatDividerModule} from '@angular/material/divider';
       submissions: submissionsReducer.reducer
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([FormsEffects]),
+    EffectsModule.forRoot([FormsEffects, SubmissionsEffects]),
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule
