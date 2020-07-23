@@ -33,6 +33,10 @@ export class AddFormFieldComponent implements OnInit {
 
     this.newFieldGroup.reset();
 
+    Object.keys(this.newFieldGroup.controls).forEach(key => {
+      this.newFieldGroup.get(key).setErrors(null) ;
+    });
+
   }
 
 }
