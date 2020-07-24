@@ -10,9 +10,24 @@ h1 {
     font-weight: 700;
     padding: 10px;
     text-align: right;
-    font-size: xx-large;
+    font-size: 3em;
     margin:0;
-    color: #69F0AE;
+    color: #7B1FA2;
     border-bottom: 1px solid #7B1FA2;
 }
 
+
+
+h2, h2 a, h2 a:hover {
+    color: #7B1FA2;
+    letter-spacing: 0.5em;
+    text-decoration: none;
+}
+
+
+
+.globalerror {
+    background-color: Red;
+    color: #FFF;
+    
+}

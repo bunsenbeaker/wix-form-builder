@@ -1,10 +1,11 @@
 <div id="container">
+    <p>Add multiple fields by setting their properties and clicking Add. When done, click NEXT to submit your changes.</p>
     <form [formGroup]="newFieldGroup">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" [style.width.px]="300">
             <mat-label>Field Name</mat-label>
             <input matInput id="name" formControlName="name">
         </mat-form-field>
-        <mat-form-field appearance="fill"> 
+        <mat-form-field appearance="fill" [style.width.px]="300"> 
             <mat-label>Field Type</mat-label>
             <mat-select formControlName="input_type">
             <mat-option value="text">Text</mat-option>
@@ -15,7 +16,7 @@
             <mat-option value="number">Number</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" [style.width.px]="300">
             <mat-label>Field Label</mat-label>
             <input matInput id="label" formControlName="label">
         </mat-form-field>
