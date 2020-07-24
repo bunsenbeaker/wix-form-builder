@@ -3,9 +3,9 @@ import { Store, select } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 import { takeUntil, take } from 'rxjs/operators';
-import { Submission } from '../core/models/submission.model';
-import { Form } from '../core/models/form.model';
-import * as Selectors from '../core/store/selectors/formbuilder.selectors';
+import { Submission } from '../../core/models/submission.model';
+import { Form } from '../../core/models/form.model';
+import * as Selectors from '../../core/store/selectors/formbuilder.selectors';
 
 
 @Component({

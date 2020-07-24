@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import {FormGroup, Validators} from '@angular/forms';
-import { Form, FormField } from '../core/models/form.model';
+import { Form, FormField } from '../../core/models/form.model';
 import { FormBuilder } from '@angular/forms';
 import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

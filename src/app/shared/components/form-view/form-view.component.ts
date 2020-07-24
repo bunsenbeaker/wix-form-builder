@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Submission, SubmittedField } from '../core/models/submission.model';
-import { Form } from '../core/models/form.model';
+import { Submission, SubmittedField } from '../../../core/models/submission.model';
+import { Form } from '../../../core/models/form.model';
 import { Router } from '@angular/router';
 
 

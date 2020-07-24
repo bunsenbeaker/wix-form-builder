@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Form } from '../core/models/form.model';
+import { Form } from '../../core/models/form.model';
 import { Observable } from 'rxjs';
-import { selectAllForms } from '../core/store/selectors/formbuilder.selectors';
+import { selectAllForms } from '../../core/store/selectors/formbuilder.selectors';
 
 
 @Component({

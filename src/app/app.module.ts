@@ -16,20 +16,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule} from '@angular/material/select';
-import { DynamicInputComponent } from './dynamic-input/dynamic-input.component';
-import { NewFormWizardComponent } from './new-form-wizard/new-form-wizard.component';
+import { DynamicInputComponent } from './forms/dynamic-input/dynamic-input.component';
+import { NewFormWizardComponent } from './forms/new-form-wizard/new-form-wizard.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule} from '@angular/material/button';
-import { AddFormFieldComponent } from './add-form-field/add-form-field.component';
-import { FormViewComponent } from './form-view/form-view.component';
-import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { AddFormFieldComponent } from './forms/add-form-field/add-form-field.component';
+import { FormViewComponent } from './shared/components/form-view/form-view.component';
+import { FormBuilderComponent } from './forms/form-builder/form-builder.component';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsListComponent } from './forms-list/forms-list.component';
+import { FormsListComponent } from './forms/forms-list/forms-list.component';
 import { MatTableModule} from '@angular/material/table';
 import { FriendlyDatePipe } from './shared/pipes/friendly-date.pipe';
 import { SubmissionsEffects } from './core/store/effects/submissions.effects';
-import { SubmissionsListComponent } from './submissions-list/submissions-list.component';
+import { SubmissionsListComponent } from './submissions/submissions-list/submissions-list.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { FormField } from '../core/models/form.model';
+import { FormField } from '../../core/models/form.model';
 import { FormGroup, FormBuilder , Validators} from '@angular/forms';
 import { Subject } from 'rxjs';
 

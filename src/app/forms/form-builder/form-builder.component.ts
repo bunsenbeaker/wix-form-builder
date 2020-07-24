@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Form } from '../core/models/form.model';
+import { Form } from '../../core/models/form.model';
 import { Store } from '@ngrx/store';
-import { CreateNewForm } from '../core/store/actions/forms.actions';
+import { CreateNewForm } from '../../core/store/actions/forms.actions';
 import { Router} from '@angular/router';
 @Component({
   selector: 'app-form-builder',
