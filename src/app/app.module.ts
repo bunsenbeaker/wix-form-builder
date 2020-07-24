@@ -31,6 +31,7 @@ import { FriendlyDatePipe } from './shared/pipes/friendly-date.pipe';
 import { SubmissionsEffects } from './core/store/effects/submissions.effects';
 import { SubmissionsListComponent } from './submissions/submissions-list/submissions-list.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { SubmitFormComponent } from './submissions/submit-form/submit-form.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FormBuilderComponent,
     FormsListComponent,
     FriendlyDatePipe,
-    SubmissionsListComponent
+    SubmissionsListComponent,
+    SubmitFormComponent
   ],
   imports: [
     BrowserModule,

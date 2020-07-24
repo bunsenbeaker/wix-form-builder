@@ -25,10 +25,14 @@ export class FormViewComponent implements OnInit {
     
   }
 
-  fieldUpdated(field: {key: string, value: string} ): void {
+  fieldUpdated(updatedField: SubmittedField ): void {
 
-    this.filledValues.push({field: field.key, value: field.value});
-
+    const existingField: SubmittedField = this.filledValues.find(f => f.name === updatedField.name);
+    if (existingField) {
+      existingField.value = updatedField.value;
+    }else {
+      this.filledValues.push(updatedField);
+    }
   }
 
 

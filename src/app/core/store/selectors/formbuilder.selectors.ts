@@ -36,7 +36,7 @@ export const submissionsDisplayData = createSelector(submissionsByFormId, select
             const fields = form.fields.map(f => f.name);
             const verifiedSubmissions =  submissions.map(s => {
                 return fields.reduce((sub, field) => {
-                    const submittedField = s.data.find(f => f.field === field);
+                    const submittedField = s.data.find(f => f.name === field);
                     return submittedField ? {...sub, [field]: submittedField.value} : sub;
                 }, {});
             });

@@ -19,6 +19,14 @@ export class SubmissionsEffects {
   );
  
 
+  submitForm$= createEffect(() => this.actions$.pipe(
+    ofType(SubmissionsActions.SubmitForm),
+    mergeMap(action => this.submissionsService.submit(action.newSubmission)
+    .pipe(map((newSubmissionResponse: {data}) => SubmissionsActions.SubmitFormSuccess({ newSubmission: newSubmissionResponse.data})),
+    catchError(() => EMPTY)))
+  ));
+
+
   constructor(
     private actions$: Actions,
     private submissionsService: SubmissionsService

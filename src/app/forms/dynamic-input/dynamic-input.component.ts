@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { FormField } from '../../core/models/form.model';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
+import { SubmittedField } from 'src/app/core/models/submission.model';
 
 @Component({
   selector: 'app-dynamic-input',
@@ -13,7 +14,7 @@ export class DynamicInputComponent implements OnInit, OnDestroy {
 
   @Input() field: FormField;
 
-  @Output() valueChanged = new EventEmitter<{key: string, value: string}>();
+  @Output() valueChanged = new EventEmitter<SubmittedField>();
 
   dynputGroup: FormGroup;
 
@@ -28,7 +29,7 @@ export class DynamicInputComponent implements OnInit, OnDestroy {
     });
 
     this.dynputGroup.get('input').valueChanges.pipe(takeUntil(this.unsubscriber)).subscribe(newValue => {
-      this.valueChanged.emit({key: this.field.name, value: newValue });
+      this.valueChanged.emit({name: this.field.name, value: newValue });
     });
   }
 

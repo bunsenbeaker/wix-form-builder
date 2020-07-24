@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const submissionSchema = mongoose.Schema({
     form_id: String,
     submitted: Date,
-    data: [{field: String, value: String}]
+    data: [{name: String, value: String}]
 });
 
 

@@ -7,8 +7,9 @@ export const initialState: Array<Submission> = [];
 
 const submissionsReducer = createReducer(
     initialState,
-    on( SubmissionActions.LoadAllSuccess , (state, {payload}) => ([...payload])
-  ));
+    on( SubmissionActions.LoadAllSuccess , (state, {payload}) => ([...payload])),
+    on( SubmissionActions.SubmitFormSuccess, (state, {newSubmission}) => ([...state, newSubmission]))
+  );
 
 
 

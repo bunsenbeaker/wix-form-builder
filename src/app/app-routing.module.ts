@@ -4,11 +4,12 @@ import { FormBuilderComponent } from './forms/form-builder/form-builder.componen
 import { FormsListComponent } from './forms/forms-list/forms-list.component';
 import { SubmissionsListComponent } from './submissions/submissions-list/submissions-list.component';
 import { FormViewComponent } from './shared/components/form-view/form-view.component';
+import { SubmitFormComponent } from './submissions/submit-form/submit-form.component';
 
 const routes: Routes = [
    { path: 'addform', component: FormBuilderComponent },
    {path: 'forms', component: FormsListComponent},
-   {path: 'forms/:id', component: FormViewComponent },
+   {path: 'forms/:id', component: SubmitFormComponent },
    {path: 'submissions/form/:id', component: SubmissionsListComponent}
 ];
 

@@ -7,6 +7,6 @@ export interface Submission {
 
 
 export interface SubmittedField {
-    field: string;
+    name: string;
     value: string;
 }
