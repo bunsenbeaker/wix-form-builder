@@ -4,12 +4,12 @@ const submissionsController = require ('./controllers/submissions.controller');
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+/*router.get('/', (req, res, next) => {
     res.json({
         status: 'API Is Working',
         message: 'Welcome to FormBuilder Demo!'
     });
-});
+});*/
 
 router.route('/forms')
     .get(formsController.index)

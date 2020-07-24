@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 const apiRoutes = require("./src/server/routes")
 
 connectDB('mongodb://localhost/formbuilder');
@@ -24,6 +25,8 @@ function initServer(){
         extended: false
      }));
     app.use(bodyParser.json());
+    app.use(express.static(__dirname + '/dist/myapp'));
+
     setRoutes(app);
    
     const port = process.env.PORT || 8080;
@@ -34,5 +37,6 @@ function initServer(){
 
 function setRoutes(app) {
     app.use('/api', apiRoutes);
+    app.get('/*', function(req,res) {
+        res.sendFile(path.join(__dirname+'/dist/wix-form-builder/index.html'));});
 }
-
