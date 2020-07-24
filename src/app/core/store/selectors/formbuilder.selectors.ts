@@ -41,7 +41,7 @@ export const submissionsDisplayData = createSelector(submissionsByFormId, select
                 }, {});
             });
 
-            return {fields, data: verifiedSubmissions, form: form.name};
+            return {fields, data: verifiedSubmissions, form};
         }
     }
 );

@@ -38,4 +38,12 @@ export class SubmissionsListComponent implements OnInit, OnDestroy {
     this.unsubscriber.complete();
   }
 
+  getFieldType(form: Form, fname: string) {
+    const field =  form.fields.find(f=>f.name===fname);
+    if (field) {
+      return `(${field.input_type})`;
+    }
+    return '';
+  }
+
 }
