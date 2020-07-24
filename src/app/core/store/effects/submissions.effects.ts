@@ -4,6 +4,7 @@ import { EMPTY } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { SubmissionsService } from '../../services/submissions.service';
 import * as SubmissionsActions from '../actions/submissions.actions';
+import {ErrorsService} from '../../services/errors.service';
 
 @Injectable()
 export class SubmissionsEffects {
@@ -13,7 +14,10 @@ export class SubmissionsEffects {
     mergeMap(() => this.submissionsService.loadAllSubmissions()
       .pipe(
         map((submissionsResponse: {data}) => SubmissionsActions.LoadAllSuccess({ payload: submissionsResponse.data})),
-        catchError(() => EMPTY)
+        catchError(() => {
+          this.err.displayError('Error loading submissions. Damn...');
+          return EMPTY;
+        })
       ))
     )
   );
@@ -23,12 +27,16 @@ export class SubmissionsEffects {
     ofType(SubmissionsActions.SubmitForm),
     mergeMap(action => this.submissionsService.submit(action.newSubmission)
     .pipe(map((newSubmissionResponse: {data}) => SubmissionsActions.SubmitFormSuccess({ newSubmission: newSubmissionResponse.data})),
-    catchError(() => EMPTY)))
+    catchError(() => {
+      this.err.displayError('Error submitting form. Oops...');
+      return EMPTY;
+    })))
   ));
 
 
   constructor(
     private actions$: Actions,
-    private submissionsService: SubmissionsService
+    private submissionsService: SubmissionsService,
+    private err: ErrorsService
   ) {}
 }

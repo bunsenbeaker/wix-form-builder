@@ -4,6 +4,7 @@ import { Submission } from './core/models/submission.model';
 import { Store } from '@ngrx/store';
 import * as FormsActions from './core/store/actions/forms.actions';
 import * as SubmissionsActions from './core/store/actions/submissions.actions';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -11,16 +12,18 @@ import * as SubmissionsActions from './core/store/actions/submissions.actions';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'wix-form-builder';
+  title = 'Wix Form Builder';
   /**
    *
    */
-  constructor(private store: Store) {
+  constructor(private store: Store, private snack: MatSnackBar) {
     
   }
   ngOnInit(): void{
     this.store.dispatch(FormsActions.LoadAll());
     this.store.dispatch(SubmissionsActions.LoadAll());
+
+
   }
 
   

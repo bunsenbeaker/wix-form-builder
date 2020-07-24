@@ -14,3 +14,11 @@ h2 {
     color: #7B1FA2;
     letter-spacing: 0.5em;
   }
+
+
+
+.globalerror {
+    background-color: Red;
+    color: #FFF;
+    
+}

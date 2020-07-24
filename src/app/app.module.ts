@@ -32,6 +32,8 @@ import { SubmissionsEffects } from './core/store/effects/submissions.effects';
 import { SubmissionsListComponent } from './submissions/submissions-list/submissions-list.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SubmitFormComponent } from './submissions/submit-form/submit-form.component';
+import { DashboardComponent } from './shared/components/dashboard/dashboard.component';
+import { MatSnackBarModule, MatSnackBar} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { SubmitFormComponent } from './submissions/submit-form/submit-form.compo
     FormsListComponent,
     FriendlyDatePipe,
     SubmissionsListComponent,
-    SubmitFormComponent
+    SubmitFormComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { SubmitFormComponent } from './submissions/submit-form/submit-form.compo
     MatTableModule,
     MatButtonModule,
     MatTooltipModule,
+    MatSnackBarModule,
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
@@ -69,7 +73,7 @@ import { SubmitFormComponent } from './submissions/submit-form/submit-form.compo
     BrowserAnimationsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

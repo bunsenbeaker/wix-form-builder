@@ -6,7 +6,6 @@ export const formsFeature = state => state.forms;
 export const submissionsFeature = state => state.submissions;
 
 
-
 export const selectAllForms = createSelector(
     formsFeature,
     submissionsFeature,
