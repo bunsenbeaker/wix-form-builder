@@ -1,0 +1,26 @@
+.container{
+    margin-top: 100px;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+}
+
+.navcard {
+    
+    border: 1px solid #595959;
+    margin: 20px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 60px auto;
+    grid-gap: 20px;
+}
+
+h2 {
+    font-weight: bolder;
+    letter-spacing: 6px;
+    border-bottom: 1px solid #7B1FA2;
+    
+}
+
+
