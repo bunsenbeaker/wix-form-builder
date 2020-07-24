@@ -10,6 +10,6 @@ export class SubmissionsService {
 
   public loadAllSubmissions(){
     console.log('fetching submissions');
-    return this.httpClient.get('http://localhost:8080/api/submissions');
+    return this.httpClient.get('/api/submissions');
   }
 }
