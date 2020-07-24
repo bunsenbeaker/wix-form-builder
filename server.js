@@ -25,7 +25,7 @@ function initServer(){
         extended: false
      }));
     app.use(bodyParser.json());
-    app.use(express.static(__dirname + '/dist/myapp'));
+    app.use(express.static(__dirname + '/dist/wix-form-builder'));
 
     setRoutes(app);
    
