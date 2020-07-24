@@ -13,7 +13,7 @@ export class FormsService {
 
   public loadAllForms(){
 
-    return this.httpClient.get('http://localhost:4200/api/forms');
+    return this.httpClient.get('http://localhost:8080/api/forms');
   }
 
 
@@ -24,7 +24,7 @@ export class FormsService {
     body = body.set('newForm', JSON.stringify(newForm));
         
     
-    return this.httpClient.post('http://localhost:4200/api/forms', body);
+    return this.httpClient.post('http://localhost:8080/api/forms', body);
 
   }
 }

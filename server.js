@@ -2,13 +2,19 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const dotenv = require('dotenv');
 const apiRoutes = require("./src/server/routes")
 
-connectDB('mongodb://localhost/formbuilder');
+
+dotenv.config();
+
+
+connectDB();
 initServer();
 
-function connectDB(uri) {
-    mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true});
+function connectDB() {
+
+    mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true});
        
     // Added check for DB connection
     if(!mongoose.connection) {
