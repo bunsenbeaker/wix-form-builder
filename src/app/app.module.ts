@@ -34,6 +34,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { SubmitFormComponent } from './submissions/submit-form/submit-form.component';
 import { DashboardComponent } from './shared/components/dashboard/dashboard.component';
 import { MatSnackBarModule, MatSnackBar} from '@angular/material/snack-bar';
+import { TopnavComponent } from './shared/components/topnav/topnav.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { MatSnackBarModule, MatSnackBar} from '@angular/material/snack-bar';
     FriendlyDatePipe,
     SubmissionsListComponent,
     SubmitFormComponent,
-    DashboardComponent
+    DashboardComponent,
+    TopnavComponent
   ],
   imports: [
     BrowserModule,
