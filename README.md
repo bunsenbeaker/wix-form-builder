@@ -27,10 +27,10 @@ In order to run the app on your machine:
 3. Run 'node server' from app's folder.
 
 The abovementioned Server.js starts a Node/Express server that's used for both serving the app (from it's DIST folder) and the backend API.
-Alternatively, you can use Angular's dev server ('ng serve') for serving the app, and 'node serve' for running the backend API, however this will require setting up some [proxy configuration](https://angular.io/guide/build#proxying-to-a-backend-server).
+Alternatively, you can use Angular's dev server ('ng serve') for serving the app, and 'node server' for running the backend API, however this will require setting up some [proxy configuration](https://angular.io/guide/build#proxying-to-a-backend-server).
 
 ## Tests
 App's code includes some basic testing, which can be run using good old 'ng test'.
 
 ## Bottom line...
-With this project I took the opportunity to learn some new cool stuff, and I must admit I really enjoyed it :) I hope you guys will too...
+With this project I took the opportunity to learn some new cool stuff, and I must admit I really enjoyed it! I hope you guys will too ;)
