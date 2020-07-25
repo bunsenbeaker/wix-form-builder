@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-fdescribe('AddFormFieldComponent', () => {
+describe('AddFormFieldComponent', () => {
   let component: AddFormFieldComponent;
   let fixture: ComponentFixture<AddFormFieldComponent>;
   let addButton;
@@ -100,7 +100,7 @@ fdescribe('AddFormFieldComponent', () => {
 
     expect(emittedObj['input_type']).toBe('text');
     expect(emittedObj['name']).toBe('fld1');
-    expect(emittedObj['label']).toBe('my text field');   
+    expect(emittedObj['label']).toBe('my text field'); 
 
     
   });
