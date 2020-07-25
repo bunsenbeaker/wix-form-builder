@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DynamicInputComponent} from './dynamic-input.component';
 
-fdescribe('DynamicInputComponent', () => {
+describe('DynamicInputComponent', () => {
   let component: DynamicInputComponent;
   let fixture: ComponentFixture<DynamicInputComponent>;
   let label;

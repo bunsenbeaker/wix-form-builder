@@ -20,8 +20,6 @@ export class FormsListComponent implements OnInit {
 
   ngOnInit(): void {
 
-   
-
     this.forms$ = this.store.pipe(select(selectAllForms));
 
   }
