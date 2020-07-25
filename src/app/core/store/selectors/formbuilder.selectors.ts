@@ -2,8 +2,10 @@ import { createSelector } from '@ngrx/store';
 import { Submission } from '../../models/submission.model';
 import { Form } from '../../models/form.model';
 
+
 export const formsFeature = state => state.forms;
 export const submissionsFeature = state => state.submissions;
+
 
 
 export const selectAllForms = createSelector(
@@ -44,3 +46,4 @@ export const submissionsDisplayData = createSelector(submissionsByFormId, select
         }
     }
 );
+

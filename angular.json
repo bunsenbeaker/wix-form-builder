@@ -66,8 +66,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wix-form-builder:build",
-            "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "wix-form-builder:build"
           },
           "configurations": {
             "production": {

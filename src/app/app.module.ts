@@ -35,6 +35,7 @@ import { SubmitFormComponent } from './submissions/submit-form/submit-form.compo
 import { DashboardComponent } from './shared/components/dashboard/dashboard.component';
 import { MatSnackBarModule, MatSnackBar} from '@angular/material/snack-bar';
 import { TopnavComponent } from './shared/components/topnav/topnav.component';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
 
 @NgModule({
@@ -67,13 +68,15 @@ import { TopnavComponent } from './shared/components/topnav/topnav.component';
     ReactiveFormsModule,
     StoreModule.forRoot({
       forms: formsReducer.reducer,
-      submissions: submissionsReducer.reducer
+      submissions: submissionsReducer.reducer,
+      router: routerReducer
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([FormsEffects, SubmissionsEffects]),
     HttpClientModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [MatSnackBar],
   bootstrap: [AppComponent]
