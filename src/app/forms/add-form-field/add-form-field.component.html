@@ -1,6 +1,6 @@
 <div id="container">
     <p>Add multiple fields by setting their properties and clicking Add. When done, click NEXT to submit your changes.</p>
-    <form [formGroup]="newFieldGroup">
+    <form [formGroup]="newFieldGroup" >
         <mat-form-field appearance="fill" [style.width.px]="300">
             <mat-label>Field Name</mat-label>
             <input matInput id="name" formControlName="name">
@@ -21,7 +21,7 @@
             <input matInput id="label" formControlName="label">
         </mat-form-field>
         <div>
-            <button id="addfield" mat-raised-button color="accent" (click)="addFieldClicked()">
+            <button type="submit" [disabled]="!newFieldGroup.valid" id="addfield" mat-raised-button color="accent" (click)="addFieldClicked()">
                 Add Field
             </button>
         </div>       
