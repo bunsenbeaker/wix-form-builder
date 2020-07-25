@@ -1,12 +1,17 @@
+#container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+
 #formview{
  
-    width: 530px;
     min-height: 600px;
-    float:left;
     position: relative;
     border: 1px solid #595959;
     overflow: hidden;
     padding: 20px;
+   
 }
 
 #submitform{
@@ -49,4 +54,45 @@
   h3 {
     font-size: 1.5em;
     border-bottom: 1px solid #FFF;
+  }
+
+
+  #comingsoon {
+    
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;   
+    
+  }
+
+  #oldlady {
+    width: 400px;
+    display: grid;
+    grid-template-columns: 60px auto;
+    font-size: 1.3em;
+    letter-spacing: 4px;
+    color: rebeccapurple;
+    padding: 20px;
+  }
+
+  @keyframes blinky {
+    0%   {opacity: 0.1;}
+    10%  {opacity: 0.18;}
+    25%  {opacity: 0.25;}
+    35% {opacity: 0.35;}
+    50%  {opacity: 0.5;}
+    75% { opacity: 0.75;}
+    100% {opacity: 1;}
+  }
+
+
+
+  .mat-icon {
+    animation-name: blinky;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    font-size: 40px;
   }
