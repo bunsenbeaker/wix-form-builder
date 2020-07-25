@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy ,ViewChild } from '@angular/core';
 import { FormField } from '../../core/models/form.model';
-import { FormGroup, FormBuilder , Validators} from '@angular/forms';
+import { FormGroup, FormBuilder , Validators, FormGroupDirective} from '@angular/forms';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -12,6 +12,8 @@ export class AddFormFieldComponent implements OnInit {
 
   @Output() addField = new EventEmitter<FormField>();
   
+  @ViewChild(FormGroupDirective) addFiedForm;
+
   newFieldGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
@@ -31,12 +33,15 @@ export class AddFormFieldComponent implements OnInit {
 
     this.addField.emit({name, input_type, label});
 
-    this.newFieldGroup.reset();
 
     Object.keys(this.newFieldGroup.controls).forEach(key => {
-      this.newFieldGroup.get(key).setErrors(null) ;
+
+      this.newFieldGroup.get(key).setErrors(null);
     });
 
+    this.addFiedForm.resetForm();
+    this.newFieldGroup.reset();
+  
   }
 
 }
