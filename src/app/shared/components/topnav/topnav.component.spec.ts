@@ -4,7 +4,7 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { TopnavComponent } from './topnav.component';
 import { By } from '@angular/platform-browser';
 
-fdescribe('TopnavComponent', () => {
+describe('TopnavComponent', () => {
   let component: TopnavComponent;
   let fixture: ComponentFixture<TopnavComponent>;
   let store: MockStore;
