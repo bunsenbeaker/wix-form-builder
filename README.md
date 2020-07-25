@@ -2,7 +2,7 @@
 
 This repository contains my solution to Wix's [Form Builder Task](https://github.com/wix-incubator/form-builder-exam).
 ## Tech Stack
-Project consistses of a Node.JS server side, using MongoDB for storage, and an Angular 10.0.4/NGRX client-side app.
+Project consists of a Node.JS server side, using MongoDB for storage, and an Angular 10.0.4/NGRX client-side app.
 
 ### Server side
 Since I didn't want this project to be just 'all about the demo', I chose to use a proper backend storage with a simple API for storing forms & submissions.
@@ -10,7 +10,8 @@ Though I don't have vast experience in Node.JS, I decided to use it for my backe
 For storing my app's data I chose MongoDB (local/cloud), as I didn't feel the need for a heavy relational DB with strong relations, stored procedures and such. This was my first MongoDB experienece, and it was a breeze:)
 
 ### Client side
-For the client side part, I used Anular 10 with [NGRX](https://ngrx.io/). I invested a bit in creating the proper Redux infrastructure, thus making the data flow in the app very straightforward eventually.  I used NGRX Effects to handle all API calls, and created dedicated selectors for delivering the data to the components, ocasionally after some processing, for display purposes. 
+For the client side part, I used Anular 10 with [NGRX](https://ngrx.io/). I invested a bit in creating the proper Redux infrastructure, thus making the data flow in the app very straightforward.  I used NGRX Effects to handle all API calls, and created dedicated selectors for delivering the data to the components, occasionally after some processing, for display purposes.
+Initially, I considered using some other possibly 'lighter' technology for implementing this app (specifically I considered going with [Polymer](https://www.polymer-project.org/)), but eventually I chickened out, as I wasn't sure I'll be able to deliver on time, I got 4 kids @ home on vacation after all ;)
 
 
 ## Online app
@@ -30,3 +31,6 @@ Alternatively, you can use Angular's dev server ('ng serve') for serving the app
 
 ## Tests
 App's code includes some basic testing, which can be run using good old 'ng test'.
+
+## Bottom line...
+With this project I took the opportunity to learn some new cool stuff, and I must admit I really enjoyed it :) I hope you guys will too...
