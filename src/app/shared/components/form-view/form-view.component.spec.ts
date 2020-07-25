@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { FormViewComponent } from './form-view.component';
 
@@ -8,7 +9,8 @@ describe('FormViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormViewComponent ]
+      declarations: [ FormViewComponent ],
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));

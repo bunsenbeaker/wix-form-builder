@@ -9,7 +9,8 @@ import {FriendlyDatePipe   } from '../../shared/pipes/friendly-date.pipe';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppModule } from '../../app.module';
 
-fdescribe('FormsListComponent', () => {
+
+describe('FormsListComponent', () => {
   let component: FormsListComponent;
   let fixture: ComponentFixture<FormsListComponent>;
   let store: MockStore;
@@ -191,10 +192,10 @@ fdescribe('FormsListComponent', () => {
   it('form submission count should match submissions in store ', ()=>{
 
     const subbtn =  fixture.debugElement.query(By.css('.subcount')).nativeElement;
-    //const subbtn = fixture.debugElement.nativeElement.querySelector('.subcount');
-    console.log(subbtn.innerText);
     expect(subbtn.innerText).toBe(''+initialState.submissions.length);
 
   });
+
+  
 
 });

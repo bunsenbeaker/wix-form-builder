@@ -54,7 +54,7 @@ describe('AddFormFieldComponent', () => {
       expect(addButton).toHaveClass('mat-button-disabled');
   });
 
-  fit ('addfield form should be invalid when not all fields are filled',()=>{
+  it ('addfield form should be invalid when not all fields are filled',()=>{
 
     const form = component.newFieldGroup;
 
@@ -80,7 +80,7 @@ describe('AddFormFieldComponent', () => {
   });
 
 
-  fit ('addfield form should emit form values when submitted',()=>{
+  it ('addfield form should emit form values when submitted',()=>{
 
     const form = component.newFieldGroup;
 

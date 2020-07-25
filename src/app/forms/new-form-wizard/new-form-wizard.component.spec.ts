@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NewFormWizardComponent } from './new-form-wizard.component';
+import {ReactiveFormsModule , FormsModule} from '@angular/forms';
 
 describe('NewFormWizardComponent', () => {
   let component: NewFormWizardComponent;
@@ -8,7 +8,8 @@ describe('NewFormWizardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewFormWizardComponent ]
+      declarations: [ NewFormWizardComponent ],
+      imports: [ReactiveFormsModule, FormsModule]
     })
     .compileComponents();
   }));

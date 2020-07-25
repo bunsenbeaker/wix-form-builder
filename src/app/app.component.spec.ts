@@ -1,16 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatSnackBarModule
       ],
       declarations: [
         AppComponent
       ],
+      providers: [  provideMockStore({ })]
     }).compileComponents();
   }));
 
@@ -23,13 +28,7 @@ describe('AppComponent', () => {
   it(`should have as title 'wix-form-builder'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('wix-form-builder');
+    expect(app.title).toEqual('Wix Form Builder');
   });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('wix-form-builder app is running!');
-  });
+  
 });
