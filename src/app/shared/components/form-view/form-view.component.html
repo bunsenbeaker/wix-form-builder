@@ -3,7 +3,7 @@
         <h4 class="ribbon" *ngIf="mode ==='preview'">PREVIEW</h4>
         <h3>{{form.name}}</h3>
         <app-dynamic-input *ngFor="let field of form.fields" [field]="field" (valueChanged)="fieldUpdated($event)"></app-dynamic-input>
-        <button id="submitform" mat-raised-button [disabled]="mode==='preview'" color="accent" (click)="submitForm()">Submit</button>
+        <button id="submitform" [disabled]="!isValid" mat-raised-button  color="accent" (click)="submitForm()">Submit</button>
     </div>
     <ng-template #soon>
         <div id="comingsoon">        

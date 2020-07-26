@@ -16,6 +16,8 @@ export class FormViewComponent implements OnInit {
 
 
   @Output() formSubmitted = new EventEmitter<Submission>();
+  
+  isValid = false;
   filledValues: Array<SubmittedField> = [];
 
 
@@ -29,10 +31,16 @@ export class FormViewComponent implements OnInit {
 
     const existingField: SubmittedField = this.filledValues.find(f => f.name === updatedField.name);
     if (existingField) {
-      existingField.value = updatedField.value;
+      if (!updatedField.value) {
+        this.filledValues = this.filledValues.filter(f => f.name !== updatedField.name);
+      }else {
+        existingField.value = updatedField.value;
+      }
     }else {
-      this.filledValues.push(updatedField);
+        this.filledValues.push(updatedField);
     }
+
+    this.isValid = this.mode === 'active' && this.filledValues.length === this.form.fields.length;
   }
 
 
